@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+    app:
+        build: .
+        volumes:
+            - .:/var/www
+            - /var/www/node_modules
+        ports:
+            - "8000:8000"
+        command: >
+            sh -c "composer install &&
+                   php artisan config:clear &&
+                   php artisan migrate --force &&
+                   npm run build &&
+                   php artisan serve --host=0.0.0.0 --port=8000"
+        working_dir: /var/www
+        networks:
+            - app-network
+    mysql:
+        image: mysql:5.7
+        environment:
+            MYSQL_DATABASE: laravel
+            MYSQL_ROOT_PASSWORD: root
+        # Other configurations...
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
