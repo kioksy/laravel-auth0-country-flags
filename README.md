@@ -27,6 +27,16 @@ $countryService = new CountryService();
 $countries = $countryService->fetchCountries();
 ```
 
+## Environment Setup
+
+Before you can run this project, you need to set up the environment variables. An example environment file is provided in the project root directory as `.env.example`.
+
+To use this file, copy it to a new file named `.env`:
+
+```bash
+cp .env.example .env
+```
+
 ## Docker Support
 
 This project includes Docker support. Docker allows you to package the application with all its dependencies into a standardized unit for software development.
