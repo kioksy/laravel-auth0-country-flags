@@ -22,9 +22,10 @@ This design also makes the `CountryService` easily replaceable. If you need to f
 
 Here's an example of how you might use the `CountryService`:
 
-````php
+```php
 $countryService = new CountryService();
 $countries = $countryService->fetchCountries();
+```
 
 ## Docker Support
 
@@ -34,4 +35,4 @@ You can start the application with the following command:
 
 ```bash
 docker-compose up --build
-````
+```

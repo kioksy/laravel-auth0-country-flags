@@ -5,6 +5,13 @@ namespace App\Services;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
+/**
+ * Class CountryService
+ *
+ * Service for fetching country data from an external API.
+ *
+ * @package App\Services
+ */
 class CountryService {
     protected $baseUrl;
 
@@ -12,6 +19,11 @@ class CountryService {
         $this->baseUrl = env('COUNTRIES_API_URL', 'https://restcountries.com/v3.1/all');
     }
 
+    /**
+     * Fetches country data from the API.
+     *
+     * @return array The country data.
+     */
     public function fetchCountries() {
         $cacheKey = 'countries_data';
         $cacheTime = 60 * 60;
