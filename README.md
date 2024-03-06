@@ -10,6 +10,8 @@ This project uses Laravel, a web application framework with expressive, elegant 
 
 Auth0 is used for secure and reliable user authentication. It's easy to implement in Laravel and provides a wide range of authentication features.
 
+In addition to these technologies, the application's routes are protected with an authentication middleware. This middleware requires users to create an account or sign in with an existing account on Auth0. This ensures that only authenticated users can access certain parts of the application.
+
 The frontend of the application is built with Vue, a progressive JavaScript framework for building user interfaces. Vue is combined with Vite, a build tool that significantly improves frontend development experience.
 
 ## CountryService
